@@ -10,6 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 @SpringBootTest
 class StudentServiceTest {
 
@@ -53,6 +55,7 @@ class StudentServiceTest {
         addresses.add(address2);
         addresses.add(address3);
         // save student object
-        studentService.save(student);
+        Student savedStudent = studentService.save(student);
+        assertNotNull (savedStudent);
     }
 }
